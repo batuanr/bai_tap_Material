@@ -30,13 +30,13 @@ public class Meat extends Material implements Discount{
     public double getRealMoney() {
         LocalDate now = LocalDate.now();
         double a = (getAmount() - getAmount()*10/100);
-        if (getManufacturingDate().equals(now.plusDays(3)) ||
-                getManufacturingDate().isBefore(now.plusDays(3))) {
+        if (getExpiryDate().equals(now.plusDays(3)) ||
+                getExpiryDate().isBefore(now.plusDays(3))) {
             return a /=2;
         }
         else {
-            if (getManufacturingDate().equals(now.plusDays(5)) ||
-                    getManufacturingDate().isBefore(now.plusDays(5))){
+            if (getExpiryDate().equals(now.plusDays(5)) ||
+                    getExpiryDate().isBefore(now.plusDays(5))){
                 return a -= a*30/100;
             }
             return a;

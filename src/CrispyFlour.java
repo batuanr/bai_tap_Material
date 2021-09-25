@@ -30,13 +30,13 @@ public class CrispyFlour extends Material implements Discount{
     public double getRealMoney() {
         LocalDate now = LocalDate.now();
         double a = (getAmount() - getAmount()*5/100);
-        if (getManufacturingDate().equals(now.plusMonths(2)) ||
-        getManufacturingDate().isBefore(now.plusMonths(2))) {
+        if (getExpiryDate().equals(now.plusMonths(2)) ||
+        getExpiryDate().isBefore(now.plusMonths(2))) {
             return a -= a*40/100;
         }
         else {
-            if (getManufacturingDate().equals(now.plusMonths(4)) ||
-                    getManufacturingDate().isBefore(now.plusMonths(4))){
+            if (getExpiryDate().equals(now.plusMonths(4)) ||
+                    getExpiryDate().isBefore(now.plusMonths(4))){
                 return a -= a*20/100;
             }
             return a;
