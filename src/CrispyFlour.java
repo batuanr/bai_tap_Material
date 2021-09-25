@@ -32,12 +32,12 @@ public class CrispyFlour extends Material implements Discount{
         double a = (getAmount() - getAmount()*5/100);
         if (getExpiryDate().equals(now.plusMonths(2)) ||
         getExpiryDate().isBefore(now.plusMonths(2))) {
-            return a -= a*40/100;
+            return a*60/100;
         }
         else {
             if (getExpiryDate().equals(now.plusMonths(4)) ||
                     getExpiryDate().isBefore(now.plusMonths(4))){
-                return a -= a*20/100;
+                return a*80/100;
             }
             return a;
         }
