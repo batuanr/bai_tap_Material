@@ -15,6 +15,14 @@ public class MaterialManagement {
         materialList.add(material);
         disPlayMaterial();
     }
+    public void editMaterial(Material material){
+        if(material instanceof Meat){
+            material = new Meat();
+        }
+        else {
+            material = new CrispyFlour();
+        }
+    }
     public void removeMaterial(Material material) {
         materialList.remove(material);
         disPlayMaterial();
